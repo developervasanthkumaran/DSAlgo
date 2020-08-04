@@ -132,4 +132,12 @@ public class BitwiseOperations {
         }
     return rev == k;
     }
+
+    boolean isPowerOf4(int n){
+         return (n & n-1)==0 && (n % 3 ==1);
+    }
+
+    int mod(int n){
+         return n & (0x3FF);
+    }
 }
