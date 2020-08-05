@@ -95,7 +95,6 @@ public class PracticeProblemOnBitwise {
     public static void main(String[] args) {
         PracticeProblemOnBitwise pr = new PracticeProblemOnBitwise();
         int[] a  = {1,3,4};
-        Arrays.sort(a);
-        System.out.println(pr.findMissingElement(a));
+        System.out.println(4 & -4);
     }
 }
