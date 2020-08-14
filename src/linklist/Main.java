@@ -1,9 +1,9 @@
-package LInkList;
+package linklist;
 
 public class Main {
 
     public static void main(String[] args) {
-        DoublyLinkList<Integer> list = new DoublyLinkList<>(Integer.MAX_VALUE,Integer.MAX_VALUE);
+        DoublyLinkList<Integer> list = new DoublyLinkList<>();
         list.add(1);
         list.add(2);
         list.add(3);

@@ -1,18 +1,59 @@
-package LInkList;
+package linklist;
 
- class DoublyLinkList<T> {
+public class DoublyLinkList<T>{
     private int size=0;
    private Node<T> head,tail,ptr;
-    DoublyLinkList(T dHValue,T dTValue){
-        head = new Node<>(dHValue);
-        tail = new Node<>(dTValue);
+    public DoublyLinkList(){
+        String type = getClass().getGenericSuperclass().getTypeName();
+        setDefaults(type);
+    }
+
+    void setDefaults(String type){
+        Object h=null,t=null;
+        switch (type) {
+            case "Integer":
+                h = Integer.MAX_VALUE;
+                t = Integer.MIN_VALUE;
+                break;
+            case "Float":
+                h = Float.MAX_VALUE;
+                t = Float.MIN_VALUE;
+                break;
+            case "String":
+                h = "head";
+                t = "tail";
+                break;
+            case "Character":
+                h = 'h';
+                t = 't';
+                break;
+            case "Byte":
+                h = Byte.MAX_VALUE;
+                t = Byte.MIN_VALUE;
+                break;
+            case "Double":
+                h = Double.MAX_VALUE;
+                t = Double.MIN_VALUE;
+                break;
+            case "Long":
+                h = Long.MAX_VALUE;
+                t = Long.MIN_VALUE;
+                break;
+            case "Boolean":
+                h = true;
+                t = true;
+                break;
+        }
+
+        head = new Node<>((T)h);
+        tail = new Node<>((T)t);
         head.next = tail;
         head.prev = null;
         tail.prev = head;
         tail.next = null;
     }
 
-    void add(T data){
+   public void add(T data){
         Node<T> node = new Node<>(data);
        if(ptr == null){
            head.next = node;
@@ -30,7 +71,7 @@ package LInkList;
        }
        size++;
     }
-    void addFirst(T data){
+   public void addFirst(T data){
         Node<T> node = new Node<>(data);
         Node<T> temp = head.next;
         head.next = node;
@@ -38,10 +79,10 @@ package LInkList;
         node.next = temp;
         temp.prev=node;
     }
-    void addLast(T data){
+   public void addLast(T data){
         add(data);
     }
-    void delete(Node<T> node) {
+  public   void delete(Node<T> node) {
         Node<T> n = head.next;
         while (n != null){
             if(n.next.data == node.data){
@@ -53,7 +94,7 @@ package LInkList;
             n=n.next;
         }
     }
-    void delete(int position) {
+   public void delete(int position) {
         Node<T> n = head.next;
         int c=0;
         while (n != null){
@@ -66,14 +107,14 @@ package LInkList;
             n=n.next;
         }
     }
-    void deleteFirst(){
+   public void deleteFirst(){
         if(head.next !=tail){
             head.next = head.next.next;
             head.next.prev = head;
             size--;
         }
     }
-    void deleteLast(){
+   public void deleteLast(){
         if(tail.prev!=null){
             tail.prev = tail.prev.prev;
             ptr = tail.prev;
@@ -83,7 +124,7 @@ package LInkList;
         }
     }
     int size(){return size;}
-    boolean contains(T data){
+   public boolean contains(T data){
         Node<T> n = head.next;
         while (n!=null){
             if(n.data == data)return true;
@@ -92,7 +133,7 @@ package LInkList;
         return false;
     }
 
-    void print(){
+    public void print(){
         Node<T> n = head.next;
         while (n!=tail){
             System.out.print(n.data+" ");
@@ -100,13 +141,19 @@ package LInkList;
         }
         System.out.println();
     }
-    void printReverse(){
+    public void printReverse(){
         Node<T> n = tail.prev;
         while (n!=head){
             System.out.print(n.data+" ");
             n=n.prev;
         }
         System.out.println();
+    }
+    public T getFirst(){
+        return head.next.data;
+    }
+    public T getLast(){
+        return tail.prev.data;
     }
 }
 
@@ -119,3 +166,4 @@ class Node<T>{
         this.prev = next =null;
     }
 }
+
