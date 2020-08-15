@@ -29,4 +29,11 @@ public class Stack<T> {
     int getSize(){
         return size;
     }
+
+    boolean isEmpty(){
+        return size==0;
+    }
+    void print(){
+        dll.printReverse();
+    }
 }

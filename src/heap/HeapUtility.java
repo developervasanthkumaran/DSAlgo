@@ -1,10 +1,10 @@
 package heap;
 
-public class HeapUtility {
+class HeapUtility {
      int heapSize,dSize;
      int[] items;
 
-    public HeapUtility(){ }
+    private HeapUtility(){ }
 
     public HeapUtility(int defaultSize){
         heapSize = 0;
