@@ -39,7 +39,8 @@ class Expression {
                 stack.pop();
             }
             else {
-                while (!stack.isEmpty() && precedence(c) <= precedence(stack.peek())){
+                while (!stack.isEmpty() && stack.peek()!='(' &&
+                        precedence(c) <= precedence(stack.peek())){
                     builder.append(stack.pop());
                 }
                 stack.push(c);
@@ -50,26 +51,28 @@ class Expression {
          while (!stack.isEmpty()){
                 builder.append(stack.pop());
         }
-
         return builder.toString();
     }
 
      String infixToPrefix(String exp){
-         String k = infixToPostfix(reverse(exp));
-        return reverse(k);
+        return reverse(infixToPostfix(reverse(exp)));
     }
 
     String reverse(String exp){
         char[] c = exp.toCharArray();
-        for (int i = 0,j=c.length-1; i < j; i++,j--) {
-            if(c[i]==')')c[i]=')';
-            else if(c[i]=='(')c[i]=')';
-            if(c[j]=='(')c[j]=')';
-            else if(c[j]==')')c[j]='(';
+        for (int i = 0,j=c.length-1;i<j || j < i; i++,j--) {
+            if(c[i]==')')c[i]='(';
+            else if(c[i]=='(')c[i] = ')';
+            if(c[j]==')')c[j]='(';
+            else if(c[j]=='(')c[j] = ')';
             char t = c[i];
             c[i]=c[j];
             c[j]=t;
         }
+        int mid = c.length/2;
+        if(c[mid]==')')c[mid]='(';
+        else if(c[mid]=='(')c[mid] = ')';
+
         return String.valueOf(c);
     }
 
