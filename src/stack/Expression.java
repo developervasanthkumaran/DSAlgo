@@ -4,21 +4,19 @@ import java.util.HashSet;
 class Expression {
 
     private Stack<Character> stack;
-    private Stack<Integer> s;
+    private Stack<Double> s;
     private HashSet<Character> operators;
+    private Stack<String> stringStack;
     Expression(){
         stack = new Stack<>();
         s=new Stack<>();
+        stringStack = new Stack<>();
         operators = new HashSet<>();
         operators.add('*');
         operators.add('/');
         operators.add('+');
         operators.add('-');
         operators.add('^');
-    }
-
-    boolean isBracket(char c){
-        return c>=50 && c<=51;
     }
 
      String infixToPostfix(String exp){
@@ -58,7 +56,7 @@ class Expression {
         return reverse(infixToPostfix(reverse(exp)));
     }
 
-    String reverse(String exp){
+   private String reverse(String exp){
         char[] c = exp.toCharArray();
         for (int i = 0,j=c.length-1;i<j || j < i; i++,j--) {
             if(c[i]==')')c[i]='(';
@@ -76,11 +74,11 @@ class Expression {
         return String.valueOf(c);
     }
 
-    int evaluatePostFix(String exp){
+    double evaluatePostFix(String exp){
         int len = exp.length();
         for (int i = 0; i < len; i++) {
             char c= exp.charAt(i);
-            int n1=0,n2=0;
+            double n1=0,n2=0;
             if(operators.contains(c)){
                 if(!s.isEmpty())
                  n2 = s.pop();
@@ -88,12 +86,15 @@ class Expression {
                  n1 = s.pop();
                 s.push(evaluate(c,n1,n2));
             }
-            else s.push(c - '0');
+            else {
+
+                s.push((double)c - '0');
+            }
         }
     return s.pop();
     }
 
-    int evaluate(char c,int n1,int n2){
+   private double evaluate(char c,double n1,double n2){
         switch (c){
             case '*':
                 return n1 * n2;
@@ -109,24 +110,24 @@ class Expression {
     return 0;
     }
 
-    int evaluatePreFix(String exp){
+    double evaluatePreFix(String exp){
         int len = exp.length();
         for (int i = len-1; i > -1; i--) {
             char c= exp.charAt(i);
-            int n1=0,n2=0;
+            double n1=0,n2=0;
             if(operators.contains(c)){
                 if(!s.isEmpty())
                     n2 = s.pop();
                 if(!s.isEmpty())
                     n1 = s.pop();
-                s.push(evaluate(c,n1,n2));
+                s.push(evaluate(c,n2,n1));
             }
-            else s.push(c - '0');
+            else s.push((double)c - '0');
         }
         return s.pop();
     }
 
-    int precedence(char ch)
+   private int precedence(char ch)
     {
         switch (ch)
         {
@@ -142,5 +143,57 @@ class Expression {
                 return 3;
         }
         return -1;
+    }
+
+    String prefixToPostfix(String exp){
+        if(exp.isEmpty())return null;
+        String k = prefixToInfix(exp);
+        return infixToPostfix(k);
+    }
+
+    String prefixToInfix(String exp){
+        if(exp.isEmpty())return null;
+        int len = exp.length();
+        for (int i = len-1; i >-1 ; i--) {
+            char c = exp.charAt(i);
+
+            if(operators.contains(c)){
+                 String s1 = stringStack.pop();
+                 String s2 = stringStack.pop();
+                 String temp = "("+s1+c+s2+")";
+                stringStack.push(temp);
+            }
+            else {
+                stringStack.push(String.valueOf(c));
+            }
+        }
+
+        return stringStack.pop();
+    }
+
+    String postfixToInfix(String exp){
+        if(exp.isEmpty())return null;
+        int len = exp.length();
+        for (int i = 0; i <len ; i++) {
+            char c = exp.charAt(i);
+
+            if(operators.contains(c)){
+                String s1 = stringStack.pop();
+                String s2 = stringStack.pop();
+                String temp = "("+s2+c+s1+")";
+                stringStack.push(temp);
+            }
+            else {
+                stringStack.push(String.valueOf(c));
+            }
+        }
+
+        return stringStack.pop();
+    }
+
+    String postfixToPrefix(String exp){
+        if(exp.isEmpty())return null;
+       String k = postfixToInfix(exp);
+       return infixToPrefix(k);
     }
 }
