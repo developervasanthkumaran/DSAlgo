@@ -1,6 +1,6 @@
 package tree;
 
-public class Main {
+public class TestTree {
     public static void main(String[] args) {
         AvlTree avlTree = new AvlTree();
         avlTree.insert(10);

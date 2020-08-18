@@ -2,7 +2,7 @@ package heap;
 
 import java.util.Arrays;
 
-public class MinHeap extends HeapUtility {
+public class MinHeap extends Heap {
     MinHeap(int dSize){
         super(dSize);
     }

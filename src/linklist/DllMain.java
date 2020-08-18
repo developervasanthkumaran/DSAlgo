@@ -1,6 +1,6 @@
 package linklist;
 
-public class Main {
+public class DllMain {
 
     public static void main(String[] args) {
         DoublyLinkList<Integer> list = new DoublyLinkList<>();

@@ -1,12 +1,12 @@
 package heap;
 
-class HeapUtility {
+class Heap {
      int heapSize,dSize;
      int[] items;
 
-    private HeapUtility(){ }
+    private Heap(){ }
 
-    public HeapUtility(int defaultSize){
+    public Heap(int defaultSize){
         heapSize = 0;
         this.dSize = defaultSize;
         items = new int[defaultSize];

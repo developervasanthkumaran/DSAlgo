@@ -1,6 +1,6 @@
 package heap;
 
-public class HeapMain {
+public class TestHeap {
     public static void main(String[] args) {
         MinHeap m = new MinHeap(10);
 
