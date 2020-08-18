@@ -5,24 +5,33 @@ import linklist.DoublyLinkList;
 public class Queue<T> {
     private DoublyLinkList<T> dll;
     private int size;
-    Queue(){
+    public Queue(){
         dll =  new DoublyLinkList<>();
     }
-    void add(T data){
+    public void add(T data){
         dll.add(data);
         size++;
     }
-    T peek(){
+   public T peek(){
         return dll.getFirst();
     }
-    T poll(){
+  public  T poll(){
+        if(size==0)return null;
         T val = dll.getFirst();
         dll.deleteFirst();
         size--;
         return val;
     }
 
-    int getSize(){
+    public int getSize(){
         return size;
+    }
+
+    public boolean isEmpty(){
+        return size == 0;
+    }
+
+    public void print(){
+        dll.print();
     }
 }

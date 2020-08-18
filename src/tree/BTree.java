@@ -51,6 +51,15 @@ public class BTree<T> {
         }
     }
 
+    int height(Node parent, int c){
+        if(parent!=null){
+            int leftHeight = Math.max(height(parent.left,c+1),height(parent.right,c+1));
+            System.out.println(leftHeight);
+
+        }
+        return c;
+    }
+
     public Node<T> getRoot() {
         return root;
     }

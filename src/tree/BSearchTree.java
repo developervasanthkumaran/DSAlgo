@@ -12,24 +12,14 @@ public class BSearchTree {
         insert(root,data);
     }
 
-    void insert(Node<Integer> r,int data){
-        if(r!=null){
-            if(data < r.data){
-                if(r.left == null)
-                {r.left = new Node<>(data);
-                noOfNodes++;
-                }
-                else insert(r.left,data);
-            }else insert(r.right,data);
-
-             if(data > r.data ){
-                 if(r.right==null){
-                r.right = new Node<>(data);noOfNodes++;
-                 }
-                 else insert(r.right,data);
-            }else  insert(r.left,data);
-
-        }
+    Node<Integer> insert(Node<Integer> r,int data){
+    if(r == null)return new Node<>(data);
+    if(data < r.data)
+        r.left = insert(r.left,data);
+    else if(data > r.data)
+        r.right = insert(r.right,data);
+    else return r;
+    return r;
     }
     public int getNoOfNodes() {
         return noOfNodes;

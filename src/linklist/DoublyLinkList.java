@@ -55,7 +55,7 @@ public class DoublyLinkList<T>{
 
    public void add(T data){
         Node<T> node = new Node<>(data);
-       if(ptr == null){
+       if(ptr == null || head.next==tail){
            head.next = node;
            node.prev= head;
            node.next = tail;
