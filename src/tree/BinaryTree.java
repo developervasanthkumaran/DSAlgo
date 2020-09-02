@@ -1,10 +1,10 @@
 package tree;
 
-public class BTree<T> {
+public class BinaryTree<T> {
     private int noOfNodes;
     private Node<T> root;
 
-   public BTree(T r){
+   public BinaryTree(T r){
         root = new Node<>(r);
         this.noOfNodes = 0;
     }
@@ -50,8 +50,28 @@ public class BTree<T> {
             inOrderTraversal(r.right);
         }
     }
+    public void preOrderTraversal(){
+        preOrderTraversal(root);
+    }
+    public void preOrderTraversal(Node<T> r){
+        if(r!=null){
+            System.out.print(r.data+" ");
+            preOrderTraversal(r.left);
+            preOrderTraversal(r.right);
+        }
+    }
+    public void postOrderTraversal(){
+        postOrderTraversal(root);
+    }
+    public void postOrderTraversal(Node<T> r){
+        if(r!=null){
+            postOrderTraversal(r.left);
+            postOrderTraversal(r.right);
+            System.out.print(r.data+" ");
+        }
+    }
 
-    int height(Node parent, int c){
+    int height(Node<T> parent, int c){
         if(parent!=null){
             int leftHeight = Math.max(height(parent.left,c+1),height(parent.right,c+1));
             System.out.println(leftHeight);

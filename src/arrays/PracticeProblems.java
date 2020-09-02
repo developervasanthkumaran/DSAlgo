@@ -4,138 +4,74 @@ import java.util.*;
 
 public class PracticeProblems {
 
-    int[] findTargettedSum(int[] a,int target){
-        HashSet<Integer> set=new HashSet<>();
-        for(int i:a){
-            if(set.contains(target-i))return new int[]{i,target-i};
-            else set.add(i);
+    long maxAbsDiff(int[] arr){
+        //It is also used to find Maximum profit for n stock prices
+        // with only one transactions
+        long max  = arr[arr.length-1],maxAbs = 0;
+        for (int i = arr.length-2; i >-1 ; i--) {
+            maxAbs = Math.max(maxAbs,max - arr[i]);
+            max = Math.max(max,arr[i]);
         }
-        return new int[]{-1};
+    return maxAbs;
     }
 
-    void subArraySumZero(int[] a){
-        HashMap<Integer, List<Integer>>map=new HashMap<>();
-        int s=0,size=a.length;
-        List<Integer> li = new ArrayList<>();
-        li.add(-1);
-        map.put(0,li);
-        for(int i=0;i<size;i++){
-            s+=a[i];
+    long maxStockProfitWithTwoTransaction(int[] arr){
+        int s = arr.length;
+        int[] profit = new int[s];
+        int max  = arr[s-1];
+        for (int i = s-2; i > -1 ; i--) {
+            profit[i] = Math.max(profit[i+1],max - arr[i]);
+            max = Math.max(max,arr[i]);
+        }
+        max = arr[0];for(int j:profit) System.out.print(j+" ");
 
-            if(map.containsKey(s)){
-                System.out.println(map.get(s));
-                for(Integer k:map.get(s))
-                System.out.println((k+1)+" "+i);
-            }
-        if(!map.containsKey(s)){
-            map.put(s,new ArrayList<>());
+        for (int i = 1; i < s; i++) {
+            profit[i] = Math.max(profit[i-1],(arr[i] - max)+profit[i]);
+            max = Math.min(max,arr[i]);
         }
-        map.get(s).add(i);
-        }
+        for(int j:profit) System.out.print(j+" ");
+
+        return profit[s-1];
     }
-
-    void sortBinaryArray(int[] a){
-        int z=0,o=0;
-        for (int value : a) {
-            if (value == 0) z++;
-            else o++;
-        }
-            int s=z+o;
-        for(int i=0;i<s;i++){
-            if(z > 0){
-                System.out.println(0);
-                z--;
-            }
-            else {
-                System.out.println(1);
-                o--;
+    int maxProfit(int[] price, int k)
+    {
+        int n = price.length;
+        int[][] profit = new int[k+1][n];
+        //o(days * k)
+        //worst case days == k then o(days ^ 2)
+        for (int i = 1; i <=k ; i++) {
+            int maxDiff = -price[0];
+            for (int j = 1; j < n ; j++) {
+                    profit[i][j] = Math.max(profit[i][j-1],price[j] + maxDiff);
+                    maxDiff = Math.max(maxDiff,profit[i-1][j] - price[j]);
             }
         }
+        return profit[k][n-1];
     }
 
-     void dutchNationalFlag(int[] a){
-        int z=0,o=0,t=0;
-        for (int value : a) {
-            if (value == 0) z++;else if(value ==1) o++;
-            else t++;
-        }
-        int s=z+o+t;
-        for(int i=0;i<s;i++){
-            if(z > 0){
-                System.out.println(0);
-                z--;
-            }
-            else if(o > 0) {
-                System.out.println(1);
-                o--;
-            }
-            else {
-                System.out.println(2);t--;
-            }
-        }
-    }
-
-    void maxSubArraySum(int[] a,int target){
-       HashMap<Integer,Integer> map = new HashMap<>();
-       int sum=0;
-       int ei=-1,len=0;
-       map.put(0,-1);
-       for(int i=0;i<a.length;i++){
-           sum +=a[i];
-           map.putIfAbsent(sum,i);
-           if(map.containsKey(sum-target) && len < i-map.get(sum-target)){
-               len = i - map.get(sum-target);
-               ei=i;
-           }
-       }
-        System.out.println(ei-len+1+" "+ei);
-    }
-
-    void findDuplicateElement(int[] a){
-        //it can also be done with xor but it finds only one duplicate element
-        HashSet<Integer> set = new HashSet<>();
-        for(int i:a) {
-            if (set.contains(i))
-                System.out.println(i);
-            set.add(i);
-        }
-    }
-
-    int kadaneAlgorithm(int[] a){
-        int maxSoFar = 0;
-        int max=0;
-        for(int i:a){
-            max +=i;
-            max = Math.max(max,0);
-            maxSoFar = Math.max(maxSoFar,max);
-        }
-    return  maxSoFar;
-    }
-
-    void inPlaceMergeArrayInSorted(int[] a,int[] b){
-        int m=a.length,n=b.length;
-        for(int i=0;i<m;i++){
-            if(a[i]>b[0]){
-                a[i]^=b[0];
-                b[0]^=a[i];
-                a[i]^=b[0];
-                int f = b[0],k;
-                for(k=1;k<n && b[k]<f;k++){
-                    b[k-1] = b[k];
-                }
-                b[k-1] = f;
+    int coinChangeRecursive(int[] coin,int n,int k){
+    //reaching here means we fulfilled balance
+        if(k == 0)return 1;
+        //reaching here means we cant fulfill balance
+        if(k < 0 || n < 0)return 0;
+        //either we can include or exclude the coins to fulfill balance
+        //this solution leads to exponential since it recursively calls for
+        //all n-1 coins
+        return coinChangeRecursive(coin,n,k - coin[n])
+                + coinChangeRecursive(coin,n-1,k);
+}
+    int coinChangeDp(int[] coins,int k){
+        int[] dp = new int[k+1];
+        dp[0] = 1;
+        for(int i:coins){
+            for(int j=i;j<=k;j++){
+                dp[j] += dp[j - i];
             }
         }
-        System.out.println(Arrays.toString(a));
-        System.out.println(Arrays.toString(b));
+    return dp[k];
     }
-
     public static void main(String[] args) {
         PracticeProblems pb = new PracticeProblems();
-        int[] a={1,4,7,8,10};
-        int[] b={2,3,6};
-            pb.inPlaceMergeArrayInSorted(a,b);
-
     }
 
 }

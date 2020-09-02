@@ -4,7 +4,6 @@ package tree;
 public class AvlTree {
      private Node<Integer> root;
 
-
     private void setRoot(Node<Integer> root) {
         this.root = root;
     }

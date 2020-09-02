@@ -1,9 +1,9 @@
 package tree;
 
-public class BSearchTree {
+public class BinarySearchTree {
     private int noOfNodes;
     private Node<Integer> root;
-    BSearchTree(int data)  {
+    BinarySearchTree(int data)  {
             root = new Node<>(data);
             noOfNodes = 0;
     }

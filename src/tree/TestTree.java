@@ -2,12 +2,23 @@ package tree;
 
 public class TestTree {
     public static void main(String[] args) {
-        AvlTree avlTree = new AvlTree();
-        avlTree.insert(10);
-        avlTree.insert(20);
-        avlTree.insert(30);
-        avlTree.insert(40);
-        avlTree.insert(50);
-        avlTree.insert(25);
-        avlTree.preOrder();
+       BinaryTree<Character> btree = new BinaryTree<>('A');
+       btree.insertL('A','B');
+     btree.insertL('B','C');
+     btree.insertL('C','D');
+     btree.insertL('D','E');
+     btree.insertR('D','F');
+     btree.insertR('B','G');
+     btree.insertR('G','H');
+     btree.insertL('H','I');
+     btree.insertR('A','J');
+     btree.insertR('J','K');
+     btree.insertL('K','L');
+     btree.insertR('L','M');
+        btree.preOrderTraversal();
+        System.out.println();
+        btree.postOrderTraversal();
+        System.out.println();
+        btree.inOrderTraversal();
+
 }}
