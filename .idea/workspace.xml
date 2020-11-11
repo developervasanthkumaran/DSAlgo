@@ -2,9 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54aebc19-3a7b-45a4-ac48-7af6e432e1e3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DataStructures - Algorithms/arrays/PracticeProblems.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataStructures - Algorithms/arrays/PracticeProblems.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DataStructures - Algorithms/bitwise/BitwiseOperations.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataStructures - Algorithms/bitwise/BitwiseOperations.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DataStructures - Algorithms/heap/Heap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataStructures - Algorithms/heap/Heap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DataStructures - Algorithms/heap/MaxHeap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataStructures - Algorithms/heap/MaxHeap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DataStructures - Algorithms/heap/MinHeap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataStructures - Algorithms/heap/MinHeap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DataStructures - Algorithms/heap/TestHeap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataStructures - Algorithms/heap/TestHeap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DataStructures - Algorithms/queue/TestQueue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataStructures - Algorithms/queue/TestQueue.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DataStructures - Algorithms/stack/Expression.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataStructures - Algorithms/stack/Expression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DataStructures - Algorithms/tree/BinaryTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataStructures - Algorithms/tree/BinaryTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/DataStructures - Algorithms/tree/TestTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/DataStructures - Algorithms/tree/TestTree.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/arrays/PracticeProblems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/arrays/PracticeProblems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tree/AvlTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree/AvlTree.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tree/BinarySearchTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree/BinarySearchTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/bitwise/BitwiseOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/bitwise/BitwiseOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/heap/Heap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/heap/Heap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/heap/MaxHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/heap/MaxHeap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/heap/MinHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/heap/MinHeap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/heap/TestHeap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/heap/TestHeap.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/queue/TestQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/queue/TestQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stack/Expression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stack/Expression.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tree/BinaryTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree/BinaryTree.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/tree/TestTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/tree/TestTree.java" afterDir="false" />
     </list>
@@ -48,7 +64,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
-  <component name="RunManager" selected="Application.PracticeProblems">
+  <component name="RunManager" selected="Application.TestHeap">
     <configuration name="PracticeProblems" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="arrays.PracticeProblems" />
       <module name="DataStructures - Algorithms" />
@@ -116,11 +132,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PracticeProblems" />
+        <item itemvalue="Application.TestHeap" />
         <item itemvalue="Application.TestTree" />
+        <item itemvalue="Application.PracticeProblems" />
         <item itemvalue="Application.TestQueue" />
         <item itemvalue="Application.TestStack" />
-        <item itemvalue="Application.TestHeap" />
       </list>
     </recent_temporary>
   </component>
@@ -234,7 +250,21 @@
       <option name="project" value="LOCAL" />
       <updated>1597732977272</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="started rewriting array practice problems">
+      <created>1599010766284</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1599010766284</updated>
+    </task>
+    <task id="LOCAL-00016" summary="started rewriting array practice problems">
+      <created>1599010815848</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1599010815848</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView">
@@ -302,25 +332,38 @@
     <MESSAGE value="added extra api on Expression evaluation" />
     <MESSAGE value="fixed bug in dll and added avl tree implementation" />
     <MESSAGE value="modified main to test" />
-    <option name="LAST_COMMIT_MESSAGE" value="modified main to test" />
+    <MESSAGE value="started rewriting array practice problems" />
+    <option name="LAST_COMMIT_MESSAGE" value="started rewriting array practice problems" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="625" height="619" key="GridCell.Tab.0.bottom" timestamp="1599010453911">
+    <state x="340" y="0" key="CommitChangelistDialog2" timestamp="1599010815321">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="625" height="619" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1599010453911" />
-    <state width="625" height="619" key="GridCell.Tab.0.center" timestamp="1599010453911">
+    <state x="340" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1599010815321" />
+    <state width="372" height="666" key="GridCell.Tab.0.bottom" timestamp="1602008042852">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="625" height="619" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1599010453911" />
-    <state width="625" height="619" key="GridCell.Tab.0.left" timestamp="1599010453910">
+    <state width="372" height="666" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1602008042852" />
+    <state width="372" height="666" key="GridCell.Tab.0.center" timestamp="1602008042852">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="625" height="619" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1599010453910" />
-    <state width="625" height="619" key="GridCell.Tab.0.right" timestamp="1599010453911">
+    <state width="372" height="666" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1602008042852" />
+    <state width="372" height="666" key="GridCell.Tab.0.left" timestamp="1602008042852">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="625" height="619" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1599010453911" />
+    <state width="372" height="666" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1602008042852" />
+    <state width="372" height="666" key="GridCell.Tab.0.right" timestamp="1602008042852">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="372" height="666" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1602008042852" />
+    <state x="407" y="33" key="new project wizard" timestamp="1600843642523">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="407" y="33" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1600843642523" />
+    <state x="425" y="187" key="run.anything.popup" timestamp="1601984971650">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1601984971650" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1598329962664">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

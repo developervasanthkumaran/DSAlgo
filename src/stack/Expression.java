@@ -45,7 +45,6 @@ class Expression {
             }
         }
 
-
          while (!stack.isEmpty()){
                 builder.append(stack.pop());
         }
@@ -87,7 +86,6 @@ class Expression {
                 s.push(evaluate(c,n1,n2));
             }
             else {
-
                 s.push((double)c - '0');
             }
         }

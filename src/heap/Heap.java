@@ -1,14 +1,14 @@
 package heap;
 
 class Heap {
-     int heapSize,dSize;
+     int heapSize, defaultSize;
      int[] items;
 
     private Heap(){ }
 
     public Heap(int defaultSize){
         heapSize = 0;
-        this.dSize = defaultSize;
+        this.defaultSize = defaultSize;
         items = new int[defaultSize];
     }
 
@@ -32,15 +32,15 @@ class Heap {
     }
     boolean hasParent(int index){
         int in = getParentIndex(index);
-         return items[in] >= 0 && in < heapSize;
+         return in >= 0 && in < heapSize;
     }
     boolean hasLeftChild(int index){
         int in = getLeftChildIndex(index);
-        return items[in] > 0  && in < heapSize;
+        return in > 0  && in < heapSize;
     }
     boolean hasRightChild(int index){
         int in = getRightChildIndex(index);
-        return items[in] > 0 && in < heapSize;
+        return in > 0 && in < heapSize;
     }
 
     void showHeapItems(){
@@ -48,6 +48,12 @@ class Heap {
             System.out.print(item+" ");
         }
         System.out.println();
+    }
+
+    void swap(int i1,int i2){
+        items[i1]^=items[i2];
+        items[i2]^=items[i1];
+        items[i1]^=items[i2];
     }
 
 }

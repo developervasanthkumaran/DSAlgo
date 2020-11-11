@@ -3,8 +3,8 @@ package heap;
 import java.util.Arrays;
 
 public class MinHeap extends Heap {
-    MinHeap(int dSize){
-        super(dSize);
+    MinHeap(int Size){
+        super(Size);
     }
 
     void add(int data){
@@ -15,9 +15,9 @@ public class MinHeap extends Heap {
     }
 
     private void checkForResizing(){
-        if(heapSize >= dSize){
-            items = Arrays.copyOf(items,dSize*2);
-            dSize*=2;
+        if(heapSize >= defaultSize){
+            items = Arrays.copyOf(items, defaultSize *2);
+            defaultSize *=2;
         }
     }
 
@@ -44,7 +44,7 @@ public class MinHeap extends Heap {
         int index = 0;
         while (hasLeftChild(index) && items[index] > leftChild(index)){
             int min = getLeftChildIndex(index);
-            if(hasRightChild(index) && rightChild(index) < items[min]){
+            if(hasRightChild(index) && rightChild(index) < leftChild(index)){
                 min = getRightChildIndex(index);
             }
             if(items[min] > items[index])break;
@@ -54,10 +54,6 @@ public class MinHeap extends Heap {
         }
     }
 
-    void swap(int i1,int i2){
-        items[i1]^=items[i2];
-        items[i2]^=items[i1];
-        items[i1]^=items[i2];
-    }
+
 
 }

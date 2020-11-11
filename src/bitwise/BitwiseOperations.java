@@ -3,10 +3,10 @@ package bitwise;
 public class BitwiseOperations {
 
      int bitwiseAddition(int a,int b){
-        int keep = (a & b) << 1;
+        int k = (a & b) << 1;
         int r = a ^ b;
-        if(keep == 0)return r;
-        return bitwiseAddition(keep,r);
+        if(k == 0)return r;
+        return bitwiseAddition(k,r);
     }
      int bitwiseSubtraction(int a,int b){
         int k = (~a) & b << 1;
@@ -92,7 +92,7 @@ public class BitwiseOperations {
         return (n & (n-1)) == 0;
     }
 
-    boolean isOddorEven(int n){
+    boolean isOddOrEven(int n){
         //return true if n is even
         return (n & 1) == 0;
     }

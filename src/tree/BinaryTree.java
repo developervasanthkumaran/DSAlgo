@@ -87,6 +87,19 @@ public class BinaryTree<T> {
     public int getNoOfNodes() {
         return noOfNodes;
     }
+
+    public void invertTree(){
+       inOrderTraversal(invertTree(root));
+    }
+
+    public Node<T> invertTree(Node<T> root){
+       if(root!=null){
+                Node<T> l = invertTree(root.left);
+                root.left = invertTree(root.right);
+                root.right = l;
+       }
+   return root;
+   }
 }
 
 

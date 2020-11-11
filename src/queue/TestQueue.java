@@ -1,8 +1,5 @@
 package queue;
-
 public class TestQueue {
-
-
     public static void main(String[] args) {
         Queue<Integer> q = new Queue<>();
         q.add(1);
@@ -19,6 +16,5 @@ public class TestQueue {
         q.print();
         q.add(5);
         q.print();
-
     }
 }
